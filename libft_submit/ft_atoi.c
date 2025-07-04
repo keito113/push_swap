@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 16:03:44 by keitabe           #+#    #+#             */
-/*   Updated: 2025/05/07 14:34:57 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/04 10:34:08 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	ft_atoi(const char *nptr)
 	while ('0' <= *nptr && *nptr <= '9')
 	{
 		i = i * 10 + (*nptr - '0');
+		if (i * sign < INT_MIN || i * sign > INT_MAX)
+			print_error();
 		nptr++;
 	}
 	return (i * sign);

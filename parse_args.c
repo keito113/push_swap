@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 12:21:18 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/02 13:51:18 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/04 10:37:41 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,20 @@ void	print_error(void)
 void	parse_args(int ac, char *av[], t_node **stack_a)
 {
 	int	i;
+	int	val;
 
 	if (ac < 2)
 		return ;
-	i = 0;
+	i = 1;
 	while (av[i])
 	{
-		if (is_numeric(av[i]))
-			return ;
-		else if ((-2147483648 < ft_atoi(av[i]))
-			|| (ft_atoi(av[i]) < 2147483647))
-			return ;
+		val = ft_atoi(av[i]);
+		if (!is_numeric(av[i]))
+			print_error();
+		else if (is_duplicate(*stack_a, val))
+			print_error();
+		else
+			node_add_back(stack_a, node_new(val));
+		i++;
 	}
 }
