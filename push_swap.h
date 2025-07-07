@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 14:54:15 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/04 16:18:16 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/07 15:14:00 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,8 @@ void				ra_rb_rotate(t_node **stack);
 void				rra_rrb_rev_rotate(t_node **stack);
 int					stack_size(t_node *stack);
 int					is_sorted(t_node *stack);
+void				free_stack(t_node **stack);
+void				sort_small(t_node **stack, t_node **stack_b);
+void				radix_sort(t_node **stack_a, t_node **stack_b);
 
 #endif

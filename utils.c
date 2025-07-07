@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:35:24 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/04 16:17:43 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/07 08:50:52 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,20 @@ int	is_sorted(t_node *stack)
 		next_node = next_node->next;
 	}
 	return (1);
+}
+
+void	free_stack(t_node **stack)
+{
+	t_node	*current;
+	t_node	*next;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack = NULL;
+	
 }
