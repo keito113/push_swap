@@ -6,13 +6,14 @@
 #    By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 15:27:53 by keitabe           #+#    #+#              #
-#    Updated: 2025/05/15 10:00:35 by keitabe          ###   ########.fr        #
+#    Updated: 2025/07/08 12:22:05 by keitabe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME      := libft.a
 SRC_FILES := \
 	ft_atoi.c \
+	ft_atol.c \
 	ft_calloc.c \
 	ft_isalnum.c \
 	ft_isalpha.c \

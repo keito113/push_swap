@@ -6,14 +6,13 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:47:04 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/04 10:46:13 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/08 12:20:18 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "push_swap.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -39,6 +38,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 

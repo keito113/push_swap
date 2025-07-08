@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/02 11:30:18 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/07 07:15:38 by keitabe          ###   ########.fr       */
+/*   Created: 2025/07/08 12:12:11 by keitabe           #+#    #+#             */
+/*   Updated: 2025/07/08 12:20:03 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char *av[])
+long	ft_atol(const char *nptr)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
+	long	i;
+	long	sign;
 
-	if (ac < 2)
-		return (0);
-	parse_args(ac, av, &stack_a);
-	stack_b = NULL;
-
+	i = 0;
+	sign = 1;
+	while (*nptr == ' ' || *nptr == '\n' || *nptr == '\t' || *nptr == '\v'
+		|| *nptr == '\f' || *nptr == '\r')
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+	{
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
+	}
+	while ('0' <= *nptr && *nptr <= '9')
+	{
+		i = i * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (i * sign);
 }

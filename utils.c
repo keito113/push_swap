@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:35:24 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/07 08:50:52 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/08 09:37:12 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,4 @@ void	free_stack(t_node **stack)
 		current = next;
 	}
 	*stack = NULL;
-	
 }
