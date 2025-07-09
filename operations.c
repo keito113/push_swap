@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:40:51 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/04 15:52:12 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/09 15:49:57 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ void	ra_rb_rotate(t_node **stack)
 	*stack = first->next;
 	last = *stack;
 	while (last->next)
-	{
 		last = last->next;
-	}
 	last->next = first;
 	first->next = NULL;
 }

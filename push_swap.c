@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 08:15:16 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/08 13:00:12 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/09 15:42:06 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	get_max_bits(t_node *stack)
 
 void	radix_sort(t_node **stack_a, t_node **stack_b)
 {
-	int	element_count;
+	int	size;
 	int	max_bits;
 	int	bit;
 
@@ -44,14 +44,14 @@ void	radix_sort(t_node **stack_a, t_node **stack_b)
 	bit = 0;
 	while (bit < max_bits)
 	{
-		element_count = stack_size(*stack_a);
-		while (element_count)
+		size = stack_size(*stack_a);
+		while (size)
 		{
 			if (((*stack_a)->value >> bit) & 1)
 				ra(stack_a);
 			else
 				pb(stack_a, stack_b);
-			element_count--;
+			size--;
 		}
 		while (*stack_b)
 			pa(stack_b, stack_a);
@@ -72,12 +72,17 @@ int	main(int ac, char *av[])
 	count = stack_size(stack_a);
 	stack_b = NULL;
 	if (is_sorted(stack_a))
+	{
+		free_stack(&stack_a);
+		free_stack(&stack_b);
 		return (0);
+	}
 	else if (count <= 5)
 		sort_small(&stack_a, &stack_b);
 	else
 		radix_sort(&stack_a, &stack_b);
 	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
 

@@ -6,16 +6,15 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 14:54:15 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/08 12:01:30 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/09 14:38:06 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
+# include "libft/libft.h"
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 

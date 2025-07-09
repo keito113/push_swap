@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 12:21:18 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/08 12:20:47 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/09 15:57:51 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,27 @@ void	parse_args(int ac, char *av[], t_node **stack_a)
 {
 	int		i;
 	long	val;
+	t_node	*new;
 
 	if (ac < 2)
 		return ;
 	i = 1;
 	while (av[i])
 	{
-		val = ft_atol(av[i]);
-		if (val * -1 < INT_MIN || val > INT_MAX)
-			print_error(stack_a);
 		if (!is_numeric(av[i]))
+			print_error(stack_a);
+		val = ft_atol(av[i]);
+		if (val < INT_MIN || val > INT_MAX)
 			print_error(stack_a);
 		else if (is_duplicate(*stack_a, (int)(val)))
 			print_error(stack_a);
 		else
-			node_add_back(stack_a, node_new((int)(val)));
+		{
+			new = node_new((int)val);
+			if (!new)
+				print_error(stack_a);
+			node_add_back(stack_a, new);
+		}
 		i++;
 	}
 }

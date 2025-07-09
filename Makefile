@@ -6,7 +6,7 @@
 #    By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 10:33:21 by keitabe           #+#    #+#              #
-#    Updated: 2025/07/08 10:51:58 by keitabe          ###   ########.fr        #
+#    Updated: 2025/07/09 14:18:08 by keitabe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS      = operations.c \
 
 OBJS      = $(SRCS:.c=.o)
 
-LIBFT_DIR = libft_submit
+LIBFT_DIR = libft
 LIBFT     = $(LIBFT_DIR)/libft.a
 
 INCLUDES  = -I$(LIBFT_DIR) -I.
