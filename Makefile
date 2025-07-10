@@ -6,7 +6,7 @@
 #    By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 10:33:21 by keitabe           #+#    #+#              #
-#    Updated: 2025/07/09 14:18:08 by keitabe          ###   ########.fr        #
+#    Updated: 2025/07/10 15:18:50 by keitabe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ CFLAGS    = -Wall -Wextra -Werror
 NAME      = push_swap
 
 SRCS      = operations.c \
-            parse_args.c \
-            push_swap.c \
-            sort_small.c \
-            utils.c \
-            wrapper.c \
-            wrapper_rotate.c
+			get_rank.c \
+			parse_args.c \
+			push_swap.c \
+			sort_small.c \
+			utils.c \
+			wrapper.c \
+			wrapper_rotate.c
 
 OBJS      = $(SRCS:.c=.o)
 

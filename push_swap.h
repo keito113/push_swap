@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 14:54:15 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/09 14:38:06 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/10 15:11:49 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				rank;
 	struct s_node	*next;
 }					t_node;
 
@@ -39,6 +40,7 @@ int					is_sorted(t_node *stack);
 void				free_stack(t_node **stack);
 void				sort_small(t_node **stack, t_node **stack_b);
 void				radix_sort(t_node **stack_a, t_node **stack_b);
+void				coordinate_compression(t_node **stack);
 void				sa(t_node **a);
 void				sb(t_node **b);
 void				pa(t_node **b, t_node **a);
