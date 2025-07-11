@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:40:51 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/09 15:49:57 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/10 17:05:38 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@ void	sa_sb_swap(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;
-	int		tmp;
+	int		tmp_val;
+	int		tmp_rank;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	first = *stack;
 	second = first->next;
-	tmp = first->value;
+	tmp_val = first->value;
+	tmp_rank = first->rank;
 	first->value = second->value;
-	second->value = tmp;
+	first->rank = second->rank;
+	second->value = tmp_val;
+	second->rank = tmp_rank;
 }
 
 void	pa_pb_push(t_node **from, t_node **to)

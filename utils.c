@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:35:24 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/08 09:37:12 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/11 09:43:31 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*node_new(int value)
 		return (NULL);
 	node->value = value;
 	node->next = NULL;
+	node->rank = 0;
 	return (node);
 }
 
