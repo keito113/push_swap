@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:55:57 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/10 15:19:09 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/11 15:56:29 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,39 @@ static int	*list_to_array(t_node *stack, int size)
 	return (arr);
 }
 
-static void	sort_array(int *arr, int size)
+static void	ft_swap(int *a, int *b)
 {
-	int	i;
-	int	j;
 	int	tmp;
 
-	i = 0;
-	while (i < size - 1)
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+static void	ft_qsort(int *arr, int left, int right)
+{
+	int	pivot;
+	int	i;
+	int	j;
+
+	if (left >= right)
+		return ;
+	pivot = arr[(left + right) / 2];
+	i = left;
+	j = right;
+	while (i <= j)
 	{
-		j = 0;
-		while (j < size - 1 - i)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				tmp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tmp;
-			}
-			j++;
-		}
-		i++;
+		while (arr[i] < pivot)
+			i++;
+		while (arr[j] > pivot)
+			j--;
+		if (i <= j)
+			ft_swap(&arr[i++], &arr[j--]);
 	}
+	if (left < j)
+		ft_qsort(arr, left, j);
+	if (i < right)
+		ft_qsort(arr, i, right);
 }
 
 static void	map_ranks(t_node *stack, int *sorted_arr, int size)
@@ -88,7 +99,7 @@ void	coordinate_compression(t_node **stack)
 	sorted_arr = list_to_array(*stack, size);
 	if (!sorted_arr)
 		return ;
-	sort_array(sorted_arr, size);
+	ft_qsort(sorted_arr, 0, size - 1);
 	map_ranks(*stack, sorted_arr, size);
 	free(sorted_arr);
 }

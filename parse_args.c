@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 12:21:18 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/09 15:57:51 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/11 10:54:08 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_numeric(const char *str)
 		return (0);
 	while (str[i])
 	{
-		if (!(str[i] >= '0' && '9' >= str[i]))
+		if (!ft_isdigit(str[i]))
 			return (0);
 		i++;
 	}
