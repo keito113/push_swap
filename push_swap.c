@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 08:15:16 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/10 15:16:43 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/15 12:22:34 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,42 +78,3 @@ int	main(int ac, char *av[])
 	free_stack(&stack_b);
 	return (0);
 }
-
-// #include "push_swap.h"
-// #include <stdio.h>
-
-// static void	print_stack(t_node *stack)
-// {
-// 	while (stack)
-// 	{
-// 		printf("%d", stack->value);
-// 		if (stack->next)
-// 			printf(" ");
-// 		stack = stack->next;
-// 	}
-// 	printf("\n");
-// }
-
-// int	main(int ac, char *av[])
-// {
-// 	t_node	*stack_a;
-// 	t_node	*stack_b;
-// 	int		count;
-
-// 	if (ac < 2)
-// 		return (0);
-// 	stack_a = NULL;
-// 	parse_args(ac, av, &stack_a);
-// 	count = stack_size(stack_a);
-// 	stack_b = NULL;
-// 	if (!is_sorted(stack_a))
-// 	{
-// 		if (count <= 5)
-// 			sort_small(&stack_a, &stack_b);
-// 		else
-// 			radix_sort(&stack_a, &stack_b);
-// 	}
-// 	print_stack(stack_a);
-// 	free_stack(&stack_a);
-// 	return (0);
-// }

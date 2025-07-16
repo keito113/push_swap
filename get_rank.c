@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:55:57 by keitabe           #+#    #+#             */
-/*   Updated: 2025/07/11 15:56:29 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/07/15 14:57:35 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ static int	*list_to_array(t_node *stack, int size)
 
 	arr = malloc(sizeof(int) * size);
 	if (!arr)
-	{
 		print_error(&stack);
-		return (NULL);
-	}
 	i = 0;
 	while (stack)
 	{
